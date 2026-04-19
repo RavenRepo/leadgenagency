@@ -1,0 +1,32 @@
+name: README Stats Sync
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update README stats
+        run: |
+          # Get repo stats
+          STARS=$(curl -s https://api.github.com/repos/RavenRepo/leadgenagency | jq .stargazers_count)
+          FORKS=$(curl -s https://api.github.com/repos/RavenRepo/leadgenagency | jq .forks_count)
+          ISSUES=$(curl -s https://api.github.com/repos/RavenRepo/leadgenagency | jq .open_issues_count)
+          WATCHERS=$(curl -s https://api.github.com/repos/RavenRepo/leadgenagency | jq .watchers_count)
+
+          echo "Stars: $STARS"
+          echo "Forks: $FORKS"
+          echo "Issues: $ISSUES"
+          echo "Watchers: $WATCHERS"
+
+      - name: Update last synced
+        run: |
+          date >> .github/sync.log

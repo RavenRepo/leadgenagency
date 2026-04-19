@@ -1,0 +1,152 @@
+<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f0f23"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="100%" style="stop-color:#FF8C5A"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ECDC4"/>
+      <stop offset="100%" style="stop-color:#6EE7DF"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#bg)" rx="16"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.05" stroke="#fff" stroke-width="0.5">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="200" y1="0" x2="200" y2="300"/>
+    <line x1="400" y1="0" x2="400" y2="300"/>
+    <line x1="600" y1="0" x2="600" y2="300"/>
+    <line x1="800" y1="0" x2="800" y2="300"/>
+    <line x1="1000" y1="0" x2="1000" y2="300"/>
+  </g>
+
+  <!-- Accent line top -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+
+  <!-- Left badge: Agents -->
+  <g transform="translate(40, 40)">
+    <rect width="120" height="50" rx="8" fill="#FF6B35" opacity="0.15"/>
+    <rect width="120" height="50" rx="8" fill="none" stroke="#FF6B35" stroke-width="1.5"/>
+    <text x="60" y="22" font-family="Arial, sans-serif" font-size="11" fill="#FF8C5A" text-anchor="middle" font-weight="bold">AGENTS</text>
+    <text x="60" y="40" font-family="Arial, sans-serif" font-size="18" fill="#FF6B35" text-anchor="middle" font-weight="bold" filter="url(#shadow)">13</text>
+  </g>
+
+  <!-- Left badge: Workflows -->
+  <g transform="translate(180, 40)">
+    <rect width="120" height="50" rx="8" fill="#4ECDC4" opacity="0.15"/>
+    <rect width="120" height="50" rx="8" fill="none" stroke="#4ECDC4" stroke-width="1.5"/>
+    <text x="60" y="22" font-family="Arial, sans-serif" font-size="11" fill="#6EE7DF" text-anchor="middle" font-weight="bold">WORKFLOWS</text>
+    <text x="60" y="40" font-family="Arial, sans-serif" font-size="18" fill="#4ECDC4" text-anchor="middle" font-weight="bold" filter="url(#shadow)">6</text>
+  </g>
+
+  <!-- Left badge: Skills -->
+  <g transform="translate(320, 40)">
+    <rect width="100" height="50" rx="8" fill="#FFE66D" opacity="0.15"/>
+    <rect width="100" height="50" rx="8" fill="none" stroke="#FFE66D" stroke-width="1.5"/>
+    <text x="50" y="22" font-family="Arial, sans-serif" font-size="11" fill="#FFF0A0" text-anchor="middle" font-weight="bold">SKILLS</text>
+    <text x="50" y="40" font-family="Arial, sans-serif" font-size="18" fill="#FFE66D" text-anchor="middle" font-weight="bold" filter="url(#shadow)">10</text>
+  </g>
+
+  <!-- Left badge: Gates -->
+  <g transform="translate(440, 40)">
+    <rect width="100" height="50" rx="8" fill="#95E1D3" opacity="0.15"/>
+    <rect width="100" height="50" rx="8" fill="none" stroke="#95E1D3" stroke-width="1.5"/>
+    <text x="50" y="22" font-family="Arial, sans-serif" font-size="11" fill="#B5F0E7" text-anchor="middle" font-weight="bold">GATES</text>
+    <text x="50" y="40" font-family="Arial, sans-serif" font-size="18" fill="#95E1D3" text-anchor="middle" font-weight="bold" filter="url(#shadow)">7</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="600" y="155" font-family="Arial Black, Arial, sans-serif" font-size="52" fill="#FF6B35" text-anchor="middle" font-weight="900" filter="url(#glow)">LeadGenAgency</text>
+
+  <!-- Tagline -->
+  <text x="600" y="185" font-family="Arial, sans-serif" font-size="16" fill="#4ECDC4" text-anchor="middle" letter-spacing="2">TURN AUDIENCE ATTENTION INTO PAYING CLIENTS</text>
+
+  <!-- Divider line -->
+  <line x1="300" y1="205" x2="900" y2="205" stroke="#4ECDC4" stroke-width="1" opacity="0.5"/>
+
+  <!-- Flow diagram -->
+  <g transform="translate(80, 225)">
+    <!-- Brief -->
+    <rect x="0" y="0" width="90" height="28" rx="6" fill="#FF6B35" opacity="0.9"/>
+    <text x="45" y="18" font-family="Arial, sans-serif" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">Brief</text>
+
+    <!-- Arrow 1 -->
+    <polygon points="100,14 108,8 108,20" fill="#4ECDC4" opacity="0.7"/>
+    <line x1="90" y1="14" x2="100" y2="14" stroke="#4ECDC4" stroke-width="1.5"/>
+
+    <!-- ICP -->
+    <rect x="112" y="0" width="90" height="28" rx="6" fill="#4ECDC4" opacity="0.9"/>
+    <text x="157" y="18" font-family="Arial, sans-serif" font-size="10" fill="#1a1a2e" text-anchor="middle" font-weight="bold">ICP</text>
+
+    <!-- Arrow 2 -->
+    <polygon points="212,14 220,8 220,20" fill="#FFE66D" opacity="0.7"/>
+    <line x1="202" y1="14" x2="212" y2="14" stroke="#FFE66D" stroke-width="1.5"/>
+
+    <!-- Lead Magnet -->
+    <rect x="224" y="0" width="90" height="28" rx="6" fill="#FFE66D" opacity="0.9"/>
+    <text x="269" y="18" font-family="Arial, sans-serif" font-size="10" fill="#1a1a2e" text-anchor="middle" font-weight="bold">Lead Magnet</text>
+
+    <!-- Arrow 3 -->
+    <polygon points="324,14 332,8 332,20" fill="#95E1D3" opacity="0.7"/>
+    <line x1="314" y1="14" x2="324" y2="14" stroke="#95E1D3" stroke-width="1.5"/>
+
+    <!-- Landing -->
+    <rect x="336" y="0" width="90" height="28" rx="6" fill="#95E1D3" opacity="0.9"/>
+    <text x="381" y="18" font-family="Arial, sans-serif" font-size="10" fill="#1a1a2e" text-anchor="middle" font-weight="bold">Landing</text>
+
+    <!-- Arrow 4 -->
+    <polygon points="436,14 444,8 444,20" fill="#FF6B35" opacity="0.7"/>
+    <line x1="426" y1="14" x2="436" y2="14" stroke="#FF6B35" stroke-width="1.5"/>
+
+    <!-- Email -->
+    <rect x="448" y="0" width="90" height="28" rx="6" fill="#FF6B35" opacity="0.9"/>
+    <text x="493" y="18" font-family="Arial, sans-serif" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">Email</text>
+
+    <!-- Arrow 5 -->
+    <polygon points="548,14 556,8 556,20" fill="#4ECDC4" opacity="0.7"/>
+    <line x1="538" y1="14" x2="548" y2="14" stroke="#4ECDC4" stroke-width="1.5"/>
+
+    <!-- Content -->
+    <rect x="560" y="0" width="90" height="28" rx="6" fill="#4ECDC4" opacity="0.9"/>
+    <text x="605" y="18" font-family="Arial, sans-serif" font-size="10" fill="#1a1a2e" text-anchor="middle" font-weight="bold">Content</text>
+
+    <!-- Arrow 6 -->
+    <polygon points="660,14 668,8 668,20" fill="#FFE66D" opacity="0.7"/>
+    <line x1="650" y1="14" x2="660" y2="14" stroke="#FFE66D" stroke-width="1.5"/>
+
+    <!-- Done -->
+    <rect x="672" y="0" width="60" height="28" rx="6" fill="#FFE66D" opacity="0.9"/>
+    <text x="702" y="18" font-family="Arial, sans-serif" font-size="10" fill="#1a1a2e" text-anchor="middle" font-weight="bold">Done ✓</text>
+  </g>
+
+  <!-- Right side: Badges -->
+  <g transform="translate(880, 40)">
+    <rect width="280" height="50" rx="8" fill="none" stroke="#4ECDC4" stroke-width="1" opacity="0.3"/>
+    <text x="140" y="20" font-family="Arial, sans-serif" font-size="10" fill="#4ECDC4" text-anchor="middle" letter-spacing="1">POWERED BY</text>
+    <text x="140" y="38" font-family="Arial, sans-serif" font-size="12" fill="#95E1D3" text-anchor="middle">Claude · Cursor · OpenCode · Aider</text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="296" width="1200" height="4" fill="url(#accent)"/>
+</svg>

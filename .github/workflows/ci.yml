@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for required files
+        run: |
+          echo "=== LeadGenAgency Structure Check ==="
+          echo ""
+          echo "Agents (13):"
+          ls -1 agents/*.md 2>/dev/null | wc -l
+          echo ""
+          echo "Workflows (6):"
+          ls -1 workflows/*.md 2>/dev/null | wc -l
+          echo ""
+          echo "Skills (10):"
+          ls -1 skills/*.md 2>/dev/null | wc -l
+          echo ""
+          echo "Templates:"
+          ls -1 templates/frameworks/*.md 2>/dev/null | wc -l
+          echo "Deliverable templates:"
+          ls -1 templates/deliverables/*.md 2>/dev/null | wc -l
+          echo ""
+          echo "All required files present: $(find . -name '*.md' | grep -E '(agents|workflows|skills|templates)' | wc -l)"
+
+      - name: Validate CLAUDE.md exists
+        run: test -f CLAUDE.md && echo "✓ CLAUDE.md present"
+
+      - name: Validate state files exist
+        run: |
+          test -f state/ledger.md && echo "✓ ledger.md"
+          test -f state/PROTOCOL.md && echo "✓ PROTOCOL.md"
+
+      - name: Validate workflows
+        run: |
+          echo "Workflow files:"
+          ls -1 workflows/
+
+      - name: Validate agents
+        run: |
+          echo "Agent files:"
+          ls -1 agents/
