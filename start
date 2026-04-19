@@ -1,0 +1,29 @@
+#!/bin/bash
+# Start a new LEADGENAGENCY project
+
+PROJECT_NAME="$1"
+BRIEF_PATH="$2"
+
+if [ -z "$PROJECT_NAME" ] || [ -z "$BRIEF_PATH" ]; then
+  echo "Usage: ./start \"Client Name\" \"/path/to/brief.md\""
+  exit 1
+fi
+
+PROJECT_DIR="projects/$(date '+%Y-%m-%d')-${PROJECT_NAME// /-}"
+
+echo "Initializing project: $PROJECT_DIR"
+echo "Brief: $BRIEF_PATH"
+
+mkdir -p "$PROJECT_DIR/raw" "$PROJECT_DIR/wiki"
+
+if [ -f "$BRIEF_PATH" ]; then
+  cp "$BRIEF_PATH" "$PROJECT_DIR/brief.md"
+else
+  echo "[WARNING] Brief file not found at $BRIEF_PATH"
+  echo "Create $PROJECT_DIR/brief.md manually"
+fi
+
+echo ""
+echo "Project initialized at: $PROJECT_DIR"
+echo "Next: ./continue $PROJECT_DIR"
+echo "Then add brief.md if not already copied"

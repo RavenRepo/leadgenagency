@@ -1,0 +1,15 @@
+#!/bin/bash
+# Request revisions on a project
+
+PROJECT_ID="$1"
+FEEDBACK="$2"
+
+if [ -z "$PROJECT_ID" ] || [ -z "$FEEDBACK" ]; then
+  echo "Usage: ./revise [project-id] \"[feedback text]\""
+  exit 1
+fi
+
+echo "Sending revision request for: $PROJECT_ID"
+echo "Feedback: $FEEDBACK"
+echo ""
+echo "The orchestrator will now route the project back to the relevant agent with this feedback."

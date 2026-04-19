@@ -1,0 +1,28 @@
+# Environment and credentials
+config.env
+.env
+*.env
+credentials.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build outputs
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Lock files (optional — uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock

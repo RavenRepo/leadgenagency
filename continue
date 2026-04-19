@@ -1,0 +1,25 @@
+#!/bin/bash
+# Continue a project after human gate approval
+
+PROJECT_ID="$1"
+
+if [ -z "$PROJECT_ID" ]; then
+  echo "Usage: ./continue [project-id]"
+  exit 1
+fi
+
+echo "Resuming project: $PROJECT_ID"
+echo "Checking state..."
+
+LEDGER="state/ledger.md"
+
+if [ ! -f "$LEDGER" ]; then
+  echo "[ERROR] Ledger not found: $LEDGER"
+  exit 1
+fi
+
+echo ""
+echo "Current state:"
+cat "$LEDGER"
+echo ""
+echo "Ready to continue. The orchestrator will now process the next stage."

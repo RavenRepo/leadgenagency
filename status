@@ -1,0 +1,15 @@
+#!/bin/bash
+# Show project status
+
+PROJECT_ID="$1"
+
+LEDGER="state/ledger.md"
+
+if [ ! -f "$LEDGER" ]; then
+  echo "[ERROR] Ledger not found"
+  exit 1
+fi
+
+echo "=== LEADGENAGENCY Status ==="
+echo ""
+cat "$LEDGER"
